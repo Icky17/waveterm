@@ -1,0 +1,37 @@
+---
+whiskers:
+  version: "^2.5.1"
+  matrix:
+    - display-order: ["0", "1", "2", "3"]
+    - flavor
+  filename: "themes/terminal/catppuccin-{{flavor.identifier}}.json"
+  hex_format: "#{{r}}{{g}}{{b}}"
+---
+{
+    "catppuccin-{{flavor.identifier}}": {
+        "display:name": "Catppuccin {{flavor.name}}",
+        "display:order": {% if flavor.identifier == "latte" %}0{% else %}{% endif %}{% if flavor.identifier == "frappe" %}1{% else %}{% endif %}{% if flavor.identifier == "macchiato" %}2{% else %}{% endif %}{% if flavor.identifier == "mocha" %}3{% else %}{% endif %},
+        "black": "{{if(cond=flavor.light, t=subtext1.hex, f=surface1.hex)}}",
+        "red": "{{red.hex}}",
+        "green": "{{green.hex}}",
+        "yellow": "{{yellow.hex}}",
+        "blue": "{{blue.hex}}",
+        "magenta": "{{pink.hex}}",
+        "cyan": "{{teal.hex}}",
+        "white": "{{if(cond=flavor.light, t=surface2.hex, f=subtext1.hex)}}",
+        "brightBlack": "{{if(cond=flavor.light, t=subtext0.hex, f=surface2.hex)}}",
+        "brightRed": "{{red.hex}}",
+        "brightGreen": "{{green.hex}}",
+        "brightYellow": "{{yellow.hex}}",
+        "brightBlue": "{{blue.hex}}",
+        "brightMagenta": "{{pink.hex}}",
+        "brightCyan": "{{teal.hex}}",
+        "brightWhite": "{{if(cond=flavor.light, t=surface1.hex, f=subtext0.hex)}}",
+        "gray": "{{overlay0.hex}}",
+        "cmdtext": "{{text.hex}}",
+        "foreground": "{{text.hex}}",
+        "selectionBackground": "{{surface2.hex}}",
+        "background": "{{base.hex}}",
+        "cursor": "{{rosewater.hex}}"
+    }
+}
