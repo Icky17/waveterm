@@ -133,6 +133,7 @@ For more information on Wave Terminal customization, see the [official documenta
 ## 💝 Thanks to
 
 - [Jairo Morales - (icky17)](https://github.com/Icky17)
+- [Scarce Koi](https://github.com/scarcekoi)
 
 &nbsp;
 
