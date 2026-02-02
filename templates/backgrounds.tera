@@ -1,0 +1,18 @@
+---
+whiskers:
+  version: "^2.5.1"
+  filename: "themes/backgrounds/catppuccin-backgrounds.json"
+  hex_format: "#{{r}}{{g}}{{b}}"
+---
+{
+  {%- for _, flavor in flavors %}
+  "bg@catppuccin-{{flavor.identifier}}": {
+    "display:name": "Catppuccin {{flavor.name}}",
+    "display:order": {% if flavor.identifier == "latte" %}4.1{% else %}{% endif %}{% if flavor.identifier == "frappe" %}4.2{% else %}{% endif %}{% if flavor.identifier == "macchiato" %}4.3{% else %}{% endif %}{% if flavor.identifier == "mocha" %}4.4{% else %}{% endif %},
+    "bg:*": true,
+    "bg": "linear-gradient(135deg, {{flavor.colors.base.hex}} 0%, {{flavor.colors.mantle.hex}} 50%, {{flavor.colors.crust.hex}} 100%)",
+    "bg:opacity": 0.95,
+    "bg:activebordercolor": "{{flavor.colors.blue.hex}}",
+    "bg:text": "{{flavor.colors.text.hex}}"
+  }{% if not loop.last %},{% endif %}{% endfor %}
+}
